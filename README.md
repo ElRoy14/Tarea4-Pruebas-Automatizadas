@@ -8,3 +8,9 @@ el servidor esta encendido.
 Para ejecutar las pruebas automatizadas debe escribir el comando "npm run test" en la linea de comandos.
 
 Las capturas de pantalla estan en la carpeta de selenium-js en la carpeta screenshots, mientras que el reporte html esta en la carpeta selenium-js en la carpeta mochawesmo-report.
+
+
+Link al video de la explicacion:
+
+https://drive.google.com/file/d/1KfAtEgmeRBKEzRqHjolJxdvoYhN0KSPv/view?usp=sharing
+

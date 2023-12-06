@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>DevTechBlog</title>
+        <link rel="stylesheet" href="styleMain.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li class="secciones"><a href="" class="secciones">Inicio</a></li>
+                    <li class="secciones"><a href="" class="secciones">Artículos</a></li>
+                    <li class="secciones"><a href="" class="secciones">Acerca de</a></li>
+                    <li class="secciones"><a href="" class="secciones">Contacto</a></li>
+                    <li class="secciones"><button id="logout" class="secciones">Log Out</button></li>
+                </ul>
+            </nav>
+            <h1>DevTech Blog</h1>
+            <p>
+                Este es un blog orientado a tratar temas de interes en el a
+                área de la tecnología y el desarrollo de software.
+            </p>
+        </header>
+        <main>
+            <ul class="articulos-title">
+                <li class="titulos">Circuito Integrados</li>
+                <li class="titulos">Git y Github</li>
+                <li class="titulos">Bases de Datos</li>
+            </ul>
+            <section class="articulos">
+                <article>
+                    <h2>Circuitos Integrados</h2>
+                    <img src="imagenes/chips.jpg">
+                    <p>En este artículo hablaremos sobre los circuitos integrados, qué son, su historia y que utilidades tienen.</p>
+                </article>
+                <article>
+                    <h2>Git y Github</h2>
+                    <img src="imagenes/git.png">
+                    <p>En este artículo hablaremos sobre Git y Github, qué son, su historia y que utilidades tienen.</p>
+                </article>
+                <article>
+                    <h2>Bases de Datos</h2>
+                    <img src="imagenes/BD.png">
+                    <p>En este artículo hablaremos sobre las Bases de Datos, qué son, su historia y que utilidades tienen.</p>
+                </article>
+            </section>
+        </main>
+
+        <script>
+
+            const logOut = document.getElementById('logout');
+            let temporizadorInactivo;
+
+            logOut.addEventListener('click', function() {
+                sessionStorage.removeItem('loggedIn');
+                window.location.href = "index.html";
+            })
+
+            function reiniciarTemporizador() {
+                clearTimeout(temporizadorInactivo);
+                temporizadorInactivo = setTimeout(function () {
+
+                    const inactividad = document.createElement('div');
+                    inactividad.classList.add('myInactividad');
+                    inactividad.textContent = 'Cerrando Sesion por Inactividad.';
+
+                    document.body.prepend(inactividad);
+
+                    setTimeout(() => {
+                        if (document.body.contains(inactividad)) {
+                            document.body.removeChild(inactividad);
+
+                            sessionStorage.removeItem('loggedIn');
+                            window.location.href = "index.html";
+
+                        } else {
+                        }
+                        }, 5000);
+
+                }, 5000);
+            };
+
+            document.addEventListener('mousemove', reiniciarTemporizador);
+            document.addEventListener('keypress', reiniciarTemporizador);
+
+            window.onload = reiniciarTemporizador;
+
+        </script>
+
+    </body>
+</html>

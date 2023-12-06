@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <form action="">
+        <h1 class="title">Login</h1>
+        <label>
+            <i class="fa-solid fa-user"></i>
+            <input placeholder="username" type="text" id="username">
+        </label>
+        <label>
+            <i class="fa-solid fa-lock"></i>
+            <input placeholder="password" type="password" id="password">
+        </label>
+        <a href="#" class="link">Forgot your password?</a>
+
+        <button id="button">Login</button>
+
+        <div>
+            <p>The password must contain a minimum of 8 characters, 
+                upper and lower case, at least one special character 
+                and numbers.</p>
+        </div>
+    </form>
+    
+    <script>
+
+        const username = document.getElementById('username');
+        const password = document.getElementById('password');
+        const boton = document.getElementById('button');
+
+        boton.addEventListener('click', function(event) {
+            event.preventDefault();
+            fetch('http://localhost:3000', {
+                method: 'GET'
+                })
+                .then(response => response.json())
+                .then(data => {
+
+                    const usernameInput = username.value;
+                    const passwordInput = password.value;
+
+                    try{
+                        if(usernameInput != "PedroAdmin25*" && passwordInput != "PedroAdmin25*"){
+                            
+                            const alerta = document.createElement('div');
+                            alerta.classList.add('myAlerta');
+                            alerta.textContent = 'El usuario o la contrasena no coinciden.';
+
+                            document.body.appendChild(alerta);
+
+                            setTimeout(() => {
+                                if (document.body.contains(alerta)) {
+                                    document.body.removeChild(alerta);
+                                } else {
+                                }
+                                }, 5000);
+
+                        }else{
+
+                            const bienvenida = document.createElement('div');
+                            bienvenida.classList.add('myBienvenida');
+                            bienvenida.textContent = 'Bienvenido a DevTech ' + usernameInput;
+
+                            document.body.appendChild(bienvenida);
+
+                            setTimeout(() => {
+                                if (document.body.contains(bienvenida)) {
+                                    document.body.removeChild(bienvenida);
+                                } else {
+                                }
+                                }, 5000);
+
+                                setTimeout(() => {
+                                    window.location.href = "mainPage.html";
+                                    sessionStorage.setItem('loggedIn', 'true');
+                                }, 3000);
+
+                        }
+                    }catch(error){
+
+                            const alerta = document.createElement('div');
+                            alerta.classList.add('myAlerta');
+                            alerta.textContent = 'El usuario o la contrasena no coinciden.';
+
+                            document.body.appendChild(alerta);
+
+                            setTimeout(() => {
+                                if (document.body.contains(alerta)) {
+                                    document.body.removeChild(alerta);
+                                } else {
+                                }
+                                }, 5000);
+                    }
+
+                });
+        })
+
+    </script>
+</body>
+</html>

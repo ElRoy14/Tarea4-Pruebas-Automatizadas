@@ -1,0 +1,100 @@
+body{
+    font-family: 'Shippori Antique B1', sans-serif;
+    background-color: #12122b;
+    color: #aaaa91;
+    padding: 0 50px;
+}
+header{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+nav ul{
+    display: flex;
+    padding-inline-start: 0;
+    justify-content: center;
+}
+nav li{
+    display: inline;
+    padding: 0 15px;
+    margin-top: 20px;
+    font-size: 26px;
+}
+h1{
+    width: 320px;
+    padding: 0 30% 0 30%;
+    font-size: 46px;
+    margin-bottom: 10px ;
+    margin-top: 10px;
+}
+header p{
+    width: 700px;
+    font-size: 26px;
+    margin-top: 10px;
+}
+.secciones{
+    color: #848478;
+    text-decoration: none;
+}
+.secciones:hover{
+    transition: .2s;
+    transform: scale(1.2);
+    color: #383845;
+    font-weight: bold;
+    text-decoration: underline;
+}
+/*CSS articulos*/
+.articulos{
+    margin: 0 auto;
+}
+.articulos-title{
+    border-top: 2px solid #000000 ;
+    border-bottom: 2px solid #000000 ;
+    padding: 5px;
+    background: #383845;
+}
+.articulos-title li{
+    display: inline;
+    font-size: 22px;
+    border: 2px solid #000000;
+    padding: 0 5px 0 5px;
+    background: #383845;
+}
+.articulos-title > .titulos:hover{
+    transition: 0.5s;
+    border-radius: 5px;
+    background: #848478;
+}
+.articulos article{
+    display: inline-block;
+    width: 500px;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    vertical-align: top;
+    box-sizing: border-box;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    background: #383845;
+}
+.articulos > article:hover{
+    transition: .2s;
+    border-color: #880606;
+}
+.articulos > article:hover h2{
+    font-size: 300%;
+}
+.articulos h2{
+    font-size: 250%;
+}
+.articulos img{
+    width: 200px;
+    height: 150px;
+    margin: 20px;
+    object-fit: fill;
+    object-position: center;
+}
+.articulos p{
+    width: 100%;
+    font-size: 22px;
+}

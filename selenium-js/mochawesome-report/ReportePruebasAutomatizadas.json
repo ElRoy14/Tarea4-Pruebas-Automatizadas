@@ -1,0 +1,260 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-12-06T18:48:57.023Z",
+    "end": "2023-12-06T18:49:39.587Z",
+    "duration": 42564,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f99afc88-6e19-42a2-8cd3-4da26968da2e",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bfbfef30-abe5-46e1-8c2d-9b8ea0159931",
+          "title": "Inicio de Sesion",
+          "fullFile": "/Users/macbook/Desktop/selenium-js/test/login.spec.js",
+          "file": "/test/login.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login con credenciales de usuario estandar",
+              "fullTitle": "Inicio de Sesion Login con credenciales de usuario estandar",
+              "timedOut": false,
+              "duration": 7425,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\n await driver.get('http://127.0.0.1:5500/index.html')\n await driver.findElement(By.id('username')).sendKeys('PedroAdmin25*')\n await driver.findElement(By.id('password')).sendKeys('PedroAdmin25*');\n const screenshot = await driver.takeScreenshot();\n fs.writeFileSync('./screenshots/Inicio Sesion.png', screenshot, 'base64');\n console.log('Se realizo la captura con el nombre Inicio Sesion');\n await driver.findElement(By.id('button')).click();\n const screenshot1 = await driver.takeScreenshot();\n fs.writeFileSync('./screenshots/Pagina Principal.png', screenshot1, 'base64');\n console.log('Se realizo la captura con el nombre Pagina Principal.');\n await driver.quit()",
+              "err": {},
+              "uuid": "497630d4-223e-4b3c-b428-6fb95335efa8",
+              "parentUUID": "bfbfef30-abe5-46e1-8c2d-9b8ea0159931",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "497630d4-223e-4b3c-b428-6fb95335efa8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7425,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "83e3665c-7fd6-467a-bf5f-c0504c3eaac5",
+          "title": "Mensajes de error claros",
+          "fullFile": "/Users/macbook/Desktop/selenium-js/test/login.spec.js",
+          "file": "/test/login.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cuando se intenta ingresar con credenciales erroneas surge una alerta",
+              "fullTitle": "Mensajes de error claros Cuando se intenta ingresar con credenciales erroneas surge una alerta",
+              "timedOut": false,
+              "duration": 7296,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\n await driver.get('http://127.0.0.1:5500/index.html')\n await driver.findElement(By.id('username')).sendKeys('PedroAdmin*')\n await driver.findElement(By.id('password')).sendKeys('Pedro25*');\n await driver.findElement(By.id('button')).click();\n     await driver.wait(until.elementLocated(By.className('myAlerta')), 10000);\n     const screenshot = await driver.takeScreenshot();\n     fs.writeFileSync('/Users/macbook/Desktop/selenium-js/screenshots/Mensaje de error.png', screenshot, 'base64');\n     console.log('Se realizo la captura con el nombre Mensaje de error');\n\n     await driver.quit();",
+              "err": {},
+              "uuid": "e7765e96-5c55-4c46-8c44-4660b91f0558",
+              "parentUUID": "83e3665c-7fd6-467a-bf5f-c0504c3eaac5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e7765e96-5c55-4c46-8c44-4660b91f0558"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7296,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "d75b3cb5-b464-4437-937a-8e6cd3a04cac",
+          "title": "Mostrar mensaje de bienvenida",
+          "fullFile": "/Users/macbook/Desktop/selenium-js/test/login.spec.js",
+          "file": "/test/login.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cuando se ingresen las credenciales correctas surge un mensaje de bienvenida.",
+              "fullTitle": "Mostrar mensaje de bienvenida Cuando se ingresen las credenciales correctas surge un mensaje de bienvenida.",
+              "timedOut": false,
+              "duration": 6430,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\n await driver.get('http://127.0.0.1:5500/index.html')\n await driver.findElement(By.id('username')).sendKeys('PedroAdmin25*')\n await driver.findElement(By.id('password')).sendKeys('PedroAdmin25*');\n await driver.findElement(By.id('button')).click();\n     await driver.wait(until.elementLocated(By.className('myBienvenida')), 10000);\n     const screenshot = await driver.takeScreenshot();\n     fs.writeFileSync('/Users/macbook/Desktop/selenium-js/screenshots/Mensaje de bienvenida.png', screenshot, 'base64');\n     console.log('Se realizo la captura con el nombre Mensaje de bienvenida');\n\n     await driver.quit();",
+              "err": {},
+              "uuid": "c01c9d4a-7da9-4190-9f81-f4bb36812594",
+              "parentUUID": "d75b3cb5-b464-4437-937a-8e6cd3a04cac",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c01c9d4a-7da9-4190-9f81-f4bb36812594"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6430,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "0814c07b-2d17-4fa0-b6cd-31888b1a7011",
+          "title": "Cerrar Sesion por inactividad",
+          "fullFile": "/Users/macbook/Desktop/selenium-js/test/login.spec.js",
+          "file": "/test/login.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Si se detecta inactividad en la pagina luego de 5 segundos se cerrara la sesion.",
+              "fullTitle": "Cerrar Sesion por inactividad Si se detecta inactividad en la pagina luego de 5 segundos se cerrara la sesion.",
+              "timedOut": false,
+              "duration": 13322,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\n await driver.get('http://127.0.0.1:5500/index.html')\n await driver.findElement(By.id('username')).sendKeys('PedroAdmin25*')\n await driver.findElement(By.id('password')).sendKeys('PedroAdmin25*');\n await driver.findElement(By.id('button')).click();\n await driver.get('http://127.0.0.1:5500/mainPage.html')\n     await driver.wait(until.elementLocated(By.className('myInactividad')), 5000);\n     const screenshot = await driver.takeScreenshot();\n     fs.writeFileSync('/Users/macbook/Desktop/selenium-js/screenshots/Cierre de sesion por inactividad.png', screenshot, 'base64');\n     console.log('Se realizo la captura con el nombre Cierre de sesion por inactividad.');\n     await driver.get('http://127.0.0.1:5500/index.html')\n     await driver.wait(until.elementLocated(By.className('title')), 3000);\n     const screenshot1 = await driver.takeScreenshot();\n     fs.writeFileSync('/Users/macbook/Desktop/selenium-js/screenshots/Login Cierre inactividad.png', screenshot1, 'base64');\n     console.log('Se realizo la captura con el nombre login cierre inactividad.');\n     await driver.quit();",
+              "err": {},
+              "uuid": "61c77cfd-9612-40c6-9412-c1d0cf3d524e",
+              "parentUUID": "0814c07b-2d17-4fa0-b6cd-31888b1a7011",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "61c77cfd-9612-40c6-9412-c1d0cf3d524e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13322,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        },
+        {
+          "uuid": "9c48932e-8874-434a-a10a-d37ab2566b24",
+          "title": "Cerrar Sesion",
+          "fullFile": "/Users/macbook/Desktop/selenium-js/test/login.spec.js",
+          "file": "/test/login.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Se cierra la sesion y se redirige a la pagina de inicio.",
+              "fullTitle": "Cerrar Sesion Se cierra la sesion y se redirige a la pagina de inicio.",
+              "timedOut": false,
+              "duration": 8041,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = new Builder().forBrowser('chrome').build();\n await driver.get('http://127.0.0.1:5500/index.html')\n await driver.findElement(By.id('username')).sendKeys('PedroAdmin25*')\n await driver.findElement(By.id('password')).sendKeys('PedroAdmin25*');\n await driver.findElement(By.id('button')).click();\n await driver.get('http://127.0.0.1:5500/mainPage.html')\n await driver.wait(until.elementLocated(By.id('logout')), 3000);\n const screenshot = await driver.takeScreenshot();\n fs.writeFileSync('/Users/macbook/Desktop/selenium-js/screenshots/Cierre de sesion.png', screenshot, 'base64');\n console.log('Se realizo la captura con el nombre Cierre de sesion.');\n await driver.findElement(By.id('logout')).click();\n await driver.get('http://127.0.0.1:5500/index.html')\n await driver.wait(until.elementLocated(By.className('title')), 3000);\n const screenshot1 = await driver.takeScreenshot();\n fs.writeFileSync('/Users/macbook/Desktop/selenium-js/screenshots/Login Cierre manual.png', screenshot1, 'base64');\n console.log('Se realizo la captura con el nombre login cierre manual.');\n     await driver.quit();",
+              "err": {},
+              "uuid": "b380d0c9-541a-4878-9b44-8380c487b248",
+              "parentUUID": "9c48932e-8874-434a-a10a-d37ab2566b24",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b380d0c9-541a-4878-9b44-8380c487b248"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8041,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "ReportePruebasAutomatizadas",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "/Users/macbook/Desktop/selenium-js/mochawesome-report",
+        "reportFilename": "ReportePruebasAutomatizadas",
+        "overwrite": "true"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

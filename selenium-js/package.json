@@ -1,0 +1,21 @@
+{
+  "name": "selenium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/*.spec.js --no-timeout --reporter mochawesome --require mochawesome/register --reporter-options reportDir=/Users/macbook/Desktop/selenium-js/mochawesome-report,reportFilename=ReportePruebasAutomatizadas,overwrite=true"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^10.2.0",
+    "selenium-webdriver": "^4.15.0",
+    "webdriver-manager": "^12.1.9" 
+  },
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "mochawesome": "^7.1.3"
+  }
+}
